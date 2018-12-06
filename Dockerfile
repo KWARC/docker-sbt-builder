@@ -5,12 +5,11 @@ FROM openjdk:jre-alpine
 ARG SBT_URL=https://dl.bintray.com/sbt/native-packages/sbt
 ARG SBT_RELEASE=0.13.15
 
-# Install dependencies and make /opt/
-RUN apk --no-cache --no-progress add bash git curl wget
-RUN mkdir -p /opt
-WORKDIR /opt
-
-# get sbt, add it to path, and run some caching
+# The path sbt will be installed into
 ENV PATH=/opt/sbt/bin:${PATH}
-RUN curl -jksSL "${SBT_URL}/${SBT_RELEASE}/sbt-${SBT_RELEASE}.tgz" | tar -xzf -
-RUN sbt sbtVersion
+
+# And the apk to install
+RUN apk --no-cache --no-progress add bash git curl \
+    && mkdir /opt && cd /opt \
+    && (curl -jksSL "${SBT_URL}/${SBT_RELEASE}/sbt-${SBT_RELEASE}.tgz" | tar -xzf -) \
+    && sbt sbtVersion
