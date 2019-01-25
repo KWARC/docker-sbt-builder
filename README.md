@@ -18,6 +18,15 @@ RUN sbt build
 
 ```
 
+## Tags
+
+This Image has two tags:
+
+- `latest` which contains a cache for the newest SBT jar pre-downloaded
+- `mmt-cache` which contains a cache for all dependencies used on the [MMT](https://github.com/UniFormal/MMT) master branch
+
+These can be found on the `master` and `mmt-cache` branch respectively.
+
 ## License
 
 The Unlicense, see [LICENSE](LICENSE). 
