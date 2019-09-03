@@ -1,3 +1,7 @@
+# DEPREACTED: Use [mozilla/sbt](https://github.com/mozilla/docker-sbt) instead.
+
+The README below is preserved for historical purposes. 
+
 # Docker-Sbt-Builder
 
 This is a [Docker](https://www.docker.com) Image intended to build sbt-based projects. 
