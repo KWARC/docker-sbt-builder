@@ -4,7 +4,7 @@ FROM openjdk:jre-alpine
 # The sbt versions to use
 ARG SBT_URL=https://dl.bintray.com/sbt/native-packages/sbt
 ARG SBT_RELEASE=0.13.15
-ARG SBT_VERSION=1.1.1
+ARG SBT_VERSION=1.2.8
 
 # The path sbt will be installed into
 ENV PATH=/opt/sbt/bin:${PATH}
